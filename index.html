@@ -19,31 +19,43 @@
     header {
       background: #2c1a0e;
       color: #fff;
-      padding: 28px 24px 24px;
+      padding: 28px 24px 20px;
       text-align: center;
     }
-    header h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-    header p {
-      margin-top: 6px;
+    header h1 { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.5px; }
+    header p { margin-top: 6px; color: #c9a882; font-size: 0.95rem; }
+
+    .header-nav { margin-top: 14px; }
+    .btn-saved {
+      background: transparent;
+      border: 2px solid rgba(201,168,130,0.6);
       color: #c9a882;
-      font-size: 0.95rem;
+      border-radius: 20px;
+      padding: 5px 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
     }
+    .btn-saved:hover { background: rgba(201,168,130,0.15); border-color: #c9a882; }
+    .saved-badge {
+      display: none;
+      background: #c9a882;
+      color: #2c1a0e;
+      border-radius: 10px;
+      padding: 1px 7px;
+      font-size: 0.75rem;
+      margin-left: 6px;
+      font-weight: 700;
+    }
+    .saved-badge.visible { display: inline-block; }
 
     .controls {
       max-width: 680px;
       margin: 28px auto 0;
       padding: 0 16px;
     }
-
-    .search-row {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
+    .search-row { display: flex; gap: 8px; margin-bottom: 12px; }
     .search-row input {
       flex: 1;
       padding: 12px 16px;
@@ -84,17 +96,8 @@
     }
     .btn-icon:hover { background: #faf6f1; border-color: #7a4a20; }
 
-    .radius-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .radius-row label {
-      font-size: 0.82rem;
-      color: #7a5c3f;
-      align-self: center;
-      margin-right: 4px;
-    }
+    .radius-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .radius-row label { font-size: 0.82rem; color: #7a5c3f; align-self: center; margin-right: 4px; }
     .chip {
       padding: 6px 14px;
       border: 2px solid #d9c4a8;
@@ -106,31 +109,13 @@
       font-weight: 500;
       transition: all 0.15s;
     }
-    .chip.active {
-      background: #7a4a20;
-      color: #fff;
-      border-color: #7a4a20;
-    }
+    .chip.active { background: #7a4a20; color: #fff; border-color: #7a4a20; }
     .chip:hover:not(.active) { border-color: #7a4a20; }
 
-    #map-wrap {
-      max-width: 680px;
-      margin: 20px auto 0;
-      padding: 0 16px;
-      display: none;
-    }
-    #map {
-      height: 280px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 2px solid #d9c4a8;
-    }
+    #map-wrap { max-width: 680px; margin: 20px auto 0; padding: 0 16px; display: none; }
+    #map { height: 280px; border-radius: 12px; overflow: hidden; border: 2px solid #d9c4a8; }
 
-    #results {
-      max-width: 680px;
-      margin: 20px auto 0;
-      padding: 0 16px 48px;
-    }
+    #results { max-width: 680px; margin: 20px auto 0; padding: 0 16px 48px; }
 
     .status-msg {
       text-align: center;
@@ -141,13 +126,10 @@
     }
     .status-msg .icon { font-size: 2.5rem; margin-bottom: 10px; }
 
-    .results-header {
-      font-size: 0.82rem;
-      color: #9a7050;
-      margin-bottom: 12px;
-    }
+    .results-header { font-size: 0.82rem; color: #9a7050; margin-bottom: 12px; }
 
     .card {
+      position: relative;
       background: #fff;
       border-radius: 12px;
       padding: 16px 18px;
@@ -160,18 +142,12 @@
     }
     .card:hover { box-shadow: 0 3px 12px rgba(61,31,10,0.12); }
 
-    .card-rank {
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: #c9a882;
-      min-width: 32px;
-      padding-top: 2px;
-    }
+    .card-rank { font-size: 1.3rem; font-weight: 800; color: #c9a882; min-width: 32px; padding-top: 2px; }
     .card-rank.gold { color: #c8942a; }
     .card-rank.silver { color: #9a9a9a; }
     .card-rank.bronze { color: #a0673a; }
 
-    .card-body { flex: 1; min-width: 0; }
+    .card-body { flex: 1; min-width: 0; padding-right: 62px; }
     .card-name {
       font-size: 1.05rem;
       font-weight: 700;
@@ -180,24 +156,9 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .card-address {
-      font-size: 0.83rem;
-      color: #9a7050;
-      margin-bottom: 8px;
-    }
-
-    .card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 8px;
-    }
-    .tag {
-      font-size: 0.75rem;
-      padding: 2px 8px;
-      border-radius: 10px;
-      font-weight: 500;
-    }
+    .card-address { font-size: 0.83rem; color: #9a7050; margin-bottom: 8px; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+    .tag { font-size: 0.75rem; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
     .tag-dist { background: #faf6f1; border: 1px solid #d9c4a8; color: #5a2e10; }
     .tag-hours { background: #f0faf0; border: 1px solid #b0d9b0; color: #2a5a2a; }
     .tag-outdoor { background: #f0f6ff; border: 1px solid #b0c8e8; color: #2a3a6a; }
@@ -213,12 +174,157 @@
     }
     .card-link:hover { border-color: #7a4a20; }
 
-    .source-note {
-      text-align: center;
-      font-size: 0.75rem;
-      color: #c0a080;
-      margin-top: 18px;
+    /* Fav + note action buttons */
+    .card-actions {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      display: flex;
+      gap: 2px;
     }
+    .action-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.15rem;
+      padding: 3px 5px;
+      line-height: 1;
+      color: #d9c4a8;
+      transition: color 0.15s;
+      border-radius: 6px;
+    }
+    .action-btn:hover { color: #7a4a20; }
+    .action-btn.fav-btn.active { color: #d94020; }
+    .action-btn.note-btn.has-note { color: #7a4a20; }
+
+    /* Expandable note on card */
+    .note-expand { margin-top: 10px; display: none; }
+    .note-expand.open { display: block; }
+    .note-expand textarea {
+      width: 100%;
+      min-height: 64px;
+      padding: 8px 10px;
+      border: 2px solid #d9c4a8;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      color: #2c1a0e;
+      background: #faf6f1;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s;
+      display: block;
+    }
+    .note-expand textarea:focus { border-color: #7a4a20; }
+    .note-hint { font-size: 0.74rem; color: #b09070; margin-top: 4px; }
+
+    /* Saved panel */
+    #saved-panel { display: none; max-width: 680px; margin: 0 auto; padding: 0 16px 48px; }
+
+    .saved-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 22px 0 16px;
+      border-bottom: 1px solid #e8d9c4;
+      margin-bottom: 16px;
+    }
+    .saved-header h2 { font-size: 1.1rem; font-weight: 700; flex: 1; }
+    .btn-back {
+      background: none;
+      border: none;
+      color: #7a4a20;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 4px 0;
+    }
+    .btn-back:hover { text-decoration: underline; }
+
+    .saved-empty {
+      text-align: center;
+      color: #9a7050;
+      padding: 40px 20px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .saved-empty .icon { font-size: 2.5rem; margin-bottom: 12px; }
+
+    .saved-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 6px rgba(61,31,10,0.07);
+    }
+    .saved-card-top { display: flex; align-items: flex-start; gap: 10px; }
+    .saved-fav-btn {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      padding-top: 2px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+      transition: color 0.15s;
+    }
+    .saved-fav-btn.active { color: #d94020; }
+    .saved-fav-btn:not(.active) { color: #d9c4a8; }
+    .saved-fav-btn:hover { color: #d94020; }
+
+    .saved-info { flex: 1; min-width: 0; }
+    .saved-name {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .saved-addr { font-size: 0.82rem; color: #9a7050; margin-bottom: 6px; }
+    .saved-links { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .saved-remove {
+      background: none;
+      border: none;
+      color: #c0a080;
+      font-size: 0.8rem;
+      cursor: pointer;
+      padding: 2px 0;
+      flex-shrink: 0;
+      align-self: flex-start;
+      transition: color 0.15s;
+    }
+    .saved-remove:hover { color: #a03010; }
+
+    .saved-note-section { margin-top: 10px; }
+    .saved-note-label {
+      font-size: 0.76rem;
+      color: #7a5c3f;
+      font-weight: 600;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .saved-note-section textarea {
+      width: 100%;
+      min-height: 56px;
+      padding: 7px 10px;
+      border: 2px solid #d9c4a8;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      color: #2c1a0e;
+      background: #faf6f1;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s;
+      display: block;
+    }
+    .saved-note-section textarea:focus { border-color: #7a4a20; }
+    .saved-note-hint { font-size: 0.74rem; color: #b09070; margin-top: 3px; }
+
+    .source-note { text-align: center; font-size: 0.75rem; color: #c0a080; margin-top: 18px; }
   </style>
 </head>
 <body>
@@ -226,6 +332,12 @@
 <header>
   <h1>&#9749; Best Cappuccino Near You</h1>
   <p>Find the finest coffee spots within walking distance</p>
+  <div class="header-nav">
+    <button class="btn-saved" onclick="showSavedPanel()">
+      &#9829; Saved
+      <span class="saved-badge" id="saved-badge"></span>
+    </button>
+  </div>
 </header>
 
 <div class="controls">
@@ -252,12 +364,203 @@
   </div>
 </div>
 
+<div id="saved-panel"></div>
+
 <script>
   let map = null;
   let activeMarkers = [];
   let radiusMeters = 400;
   let currentLat = null;
   let currentLon = null;
+  let cafeCache = {};
+  let savedData = {};
+
+  // ---- Persistence ----
+
+  function loadSaved() {
+    try { savedData = JSON.parse(localStorage.getItem('cappuccino_saved') || '{}'); }
+    catch(e) { savedData = {}; }
+    updateSavedBadge();
+  }
+
+  function persistSaved() {
+    localStorage.setItem('cappuccino_saved', JSON.stringify(savedData));
+    updateSavedBadge();
+  }
+
+  function updateSavedBadge() {
+    const count = Object.keys(savedData).length;
+    const badge = document.getElementById('saved-badge');
+    badge.textContent = count || '';
+    badge.classList.toggle('visible', count > 0);
+  }
+
+  // id is "lat,lon" string; only contains digits, '.', ',', '-' so no HTML/JS escaping needed
+  function ensureEntry(id) {
+    const c = cafeCache[id];
+    if (!c) return false;
+    if (!savedData[id]) {
+      savedData[id] = { name: c.name, lat: c.lat, lon: c.lon, address: c.address, city: c.city, website: c.website, fav: false, note: '' };
+    }
+    return true;
+  }
+
+  function cleanupEntry(id) {
+    if (savedData[id] && !savedData[id].fav && !savedData[id].note) delete savedData[id];
+  }
+
+  // ---- Favorites ----
+
+  function toggleFav(id) {
+    if (!ensureEntry(id)) return;
+    savedData[id].fav = !savedData[id].fav;
+    cleanupEntry(id);
+    persistSaved();
+    const btn = document.querySelector(`.fav-btn[data-id="${id}"]`);
+    if (btn) {
+      const on = !!savedData[id]?.fav;
+      btn.textContent = on ? '♥' : '♡';
+      btn.classList.toggle('active', on);
+      btn.title = on ? 'Remove from saved' : 'Save this place';
+    }
+    if (document.getElementById('saved-panel').style.display !== 'none') renderSavedPanel();
+  }
+
+  // ---- Notes (inline on result cards) ----
+
+  function toggleNoteArea(id) {
+    const area = document.getElementById('note-area-' + id);
+    if (!area) return;
+    const opening = !area.classList.contains('open');
+    area.classList.toggle('open', opening);
+    if (opening) area.querySelector('textarea').focus();
+  }
+
+  function onNoteInput(id) {
+    if (!ensureEntry(id)) return;
+    const ta = document.querySelector('#note-area-' + id + ' textarea');
+    savedData[id].note = ta ? ta.value : '';
+    const btn = document.querySelector(`.note-btn[data-id="${id}"]`);
+    if (btn) btn.classList.toggle('has-note', !!savedData[id].note);
+  }
+
+  function onNoteBlur(id) {
+    const ta = document.querySelector('#note-area-' + id + ' textarea');
+    if (savedData[id]) { savedData[id].note = ta ? ta.value : ''; cleanupEntry(id); }
+    persistSaved();
+  }
+
+  // ---- Saved panel ----
+
+  function showSavedPanel() {
+    document.querySelector('.controls').style.display = 'none';
+    document.getElementById('map-wrap').style.display = 'none';
+    document.getElementById('results').style.display = 'none';
+    renderSavedPanel();
+    document.getElementById('saved-panel').style.display = 'block';
+  }
+
+  function hideSavedPanel() {
+    document.getElementById('saved-panel').style.display = 'none';
+    document.querySelector('.controls').style.display = '';
+    document.getElementById('results').style.display = '';
+    if (currentLat !== null) document.getElementById('map-wrap').style.display = 'block';
+  }
+
+  function toggleSavedFav(id) {
+    if (!savedData[id]) return;
+    savedData[id].fav = !savedData[id].fav;
+    cleanupEntry(id);
+    persistSaved();
+    renderSavedPanel();
+    const btn = document.querySelector(`.fav-btn[data-id="${id}"]`);
+    if (btn) {
+      const on = !!savedData[id]?.fav;
+      btn.textContent = on ? '♥' : '♡';
+      btn.classList.toggle('active', on);
+    }
+  }
+
+  function onSavedNoteInput(id) {
+    if (!savedData[id]) return;
+    const ta = document.getElementById('snote-' + id);
+    if (ta) savedData[id].note = ta.value;
+    const btn = document.querySelector(`.note-btn[data-id="${id}"]`);
+    if (btn) btn.classList.toggle('has-note', !!savedData[id].note);
+  }
+
+  function onSavedNoteBlur(id) {
+    if (!savedData[id]) return;
+    const ta = document.getElementById('snote-' + id);
+    if (ta) savedData[id].note = ta.value;
+    cleanupEntry(id);
+    persistSaved();
+    if (!savedData[id]) renderSavedPanel();
+  }
+
+  function removeSavedEntry(id) {
+    delete savedData[id];
+    persistSaved();
+    renderSavedPanel();
+    const favBtn = document.querySelector(`.fav-btn[data-id="${id}"]`);
+    if (favBtn) { favBtn.textContent = '♡'; favBtn.classList.remove('active'); }
+    const noteBtn = document.querySelector(`.note-btn[data-id="${id}"]`);
+    if (noteBtn) noteBtn.classList.remove('has-note');
+    const area = document.getElementById('note-area-' + id);
+    if (area) { area.querySelector('textarea').value = ''; area.classList.remove('open'); }
+  }
+
+  function renderSavedPanel() {
+    const panel = document.getElementById('saved-panel');
+    const entries = Object.entries(savedData);
+
+    let html = `
+      <div class="saved-header">
+        <button class="btn-back" onclick="hideSavedPanel()">&#8592; Back to search</button>
+        <h2>&#9829; Saved Places</h2>
+      </div>`;
+
+    if (!entries.length) {
+      html += `
+        <div class="saved-empty">
+          <div class="icon">&#9749;</div>
+          <div>No saved places yet.<br>Tap &#9829; on a cafe card to save it,<br>or use &#9998; to add a note.</div>
+        </div>`;
+    } else {
+      html += entries.map(([id, c]) => {
+        const mapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(c.name + (c.address ? ' ' + c.address : ''))}/@${c.lat},${c.lon},17z`;
+        return `
+          <div class="saved-card">
+            <div class="saved-card-top">
+              <button class="saved-fav-btn ${c.fav ? 'active' : ''}"
+                onclick="toggleSavedFav('${id}')"
+                title="${c.fav ? 'Remove from favorites' : 'Mark as favorite'}">${c.fav ? '♥' : '♡'}</button>
+              <div class="saved-info">
+                <div class="saved-name">${escHtml(c.name)}</div>
+                ${c.address ? `<div class="saved-addr">${escHtml(c.address)}${c.city ? ', ' + escHtml(c.city) : ''}</div>` : ''}
+                <div class="saved-links">
+                  <a class="card-link" href="${mapsUrl}" target="_blank" rel="noopener">View on Google Maps &rarr;</a>
+                  ${c.website ? `<a class="card-link" href="${escHtml(c.website)}" target="_blank" rel="noopener">Website &rarr;</a>` : ''}
+                </div>
+              </div>
+              <button class="saved-remove" onclick="removeSavedEntry('${id}')" title="Remove">&#10005;</button>
+            </div>
+            <div class="saved-note-section">
+              <div class="saved-note-label">&#9998; Notes</div>
+              <textarea id="snote-${id}"
+                placeholder="Add a personal note about this place..."
+                oninput="onSavedNoteInput('${id}')"
+                onblur="onSavedNoteBlur('${id}')">${escHtml(c.note || '')}</textarea>
+              <div class="saved-note-hint">Auto-saved when you leave the field</div>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    panel.innerHTML = html;
+  }
+
+  // ---- Search & map ----
 
   function setRadius(btn, meters) {
     document.querySelectorAll('.chip').forEach(b => b.classList.remove('active'));
@@ -276,30 +579,20 @@
         { headers: { 'Accept-Language': 'en' } }
       );
       const data = await res.json();
-      if (!data.length) {
-        setStatus('&#10060; Location not found. Try a more specific address or city name.');
-        return;
-      }
+      if (!data.length) { setStatus('&#10060; Location not found. Try a more specific address or city name.'); return; }
       currentLat = parseFloat(data[0].lat);
       currentLon = parseFloat(data[0].lon);
       fetchCafes(currentLat, currentLon);
-    } catch (err) {
+    } catch(err) {
       setStatus('&#10060; Network error finding location. Please try again.');
     }
   }
 
   function useMyLocation() {
-    if (!navigator.geolocation) {
-      setStatus('&#10060; Geolocation is not supported by your browser.');
-      return;
-    }
+    if (!navigator.geolocation) { setStatus('&#10060; Geolocation is not supported by your browser.'); return; }
     setStatus('&#128205; Getting your current location&hellip;');
     navigator.geolocation.getCurrentPosition(
-      pos => {
-        currentLat = pos.coords.latitude;
-        currentLon = pos.coords.longitude;
-        fetchCafes(currentLat, currentLon);
-      },
+      pos => { currentLat = pos.coords.latitude; currentLon = pos.coords.longitude; fetchCafes(currentLat, currentLon); },
       () => setStatus('&#10060; Could not access your location. Try entering an address instead.')
     );
   }
@@ -308,13 +601,10 @@
     setStatus('&#9749; Scouting the best cappuccino spots&hellip;');
     const query = `[out:json][timeout:25];(node["amenity"="cafe"](around:${radiusMeters},${lat},${lon});way["amenity"="cafe"](around:${radiusMeters},${lat},${lon}););out body;>;out skel qt;`;
     try {
-      const res = await fetch('https://overpass-api.de/api/interpreter', {
-        method: 'POST',
-        body: query
-      });
+      const res = await fetch('https://overpass-api.de/api/interpreter', { method: 'POST', body: query });
       const data = await res.json();
       renderResults(data.elements, lat, lon);
-    } catch (err) {
+    } catch(err) {
       setStatus('&#10060; Could not fetch cafe data. Please try again in a moment.');
     }
   }
@@ -340,15 +630,13 @@
   }
 
   function renderResults(elements, lat, lon) {
-    // Collect nodes that are cafes with names
     const cafes = elements
       .filter(e => e.type === 'node' && e.tags && e.tags.name)
       .map(e => ({
         name: e.tags.name,
         lat: e.lat,
         lon: e.lon,
-        address: [e.tags['addr:housenumber'], e.tags['addr:street']]
-          .filter(Boolean).join(' '),
+        address: [e.tags['addr:housenumber'], e.tags['addr:street']].filter(Boolean).join(' '),
         city: e.tags['addr:city'] || '',
         hours: e.tags['opening_hours'] || null,
         outdoor: e.tags['outdoor_seating'] === 'yes',
@@ -358,14 +646,15 @@
       .sort((a, b) => a.distance - b.distance)
       .slice(0, 12);
 
-    // Show/init map
+    cafeCache = {};
+    cafes.forEach(c => { cafeCache[`${c.lat},${c.lon}`] = c; });
+
     const mapWrap = document.getElementById('map-wrap');
     mapWrap.style.display = 'block';
     if (!map) {
       map = L.map('map').setView([lat, lon], 15);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors',
-        maxZoom: 19
+        attribution: '&copy; OpenStreetMap contributors', maxZoom: 19
       }).addTo(map);
     } else {
       map.setView([lat, lon], 15);
@@ -373,7 +662,6 @@
       activeMarkers = [];
     }
 
-    // You-are-here marker
     const youMarker = L.circleMarker([lat, lon], {
       radius: 9, fillColor: '#7a4a20', color: '#fff', weight: 3, fillOpacity: 1
     }).addTo(map).bindPopup('<strong>You are here</strong>');
@@ -383,21 +671,22 @@
       document.getElementById('results').innerHTML = `
         <div class="status-msg">
           <div class="icon">&#128533;</div>
-          <div>No cafes found within this walking distance.<br>
-          Try a wider radius or a different location.</div>
+          <div>No cafes found within this walking distance.<br>Try a wider radius or a different location.</div>
         </div>`;
       return;
     }
 
-    // Cafe markers on map
-    cafes.forEach((c, i) => {
+    cafes.forEach(c => {
       const m = L.marker([c.lat, c.lon]).addTo(map)
         .bindPopup(`<strong>${c.name}</strong><br>${c.address || ''}<br><em>${fmtDist(c.distance)}</em>`);
       activeMarkers.push(m);
     });
 
-    // Result cards
     const cards = cafes.map((c, i) => {
+      const id = `${c.lat},${c.lon}`;
+      const saved = savedData[id];
+      const isFav = !!saved?.fav;
+      const hasNote = !!(saved?.note);
       const mapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(c.name + (c.address ? ' ' + c.address : ''))}/@${c.lat},${c.lon},17z`;
       const tags = [
         `<span class="tag tag-dist">&#128205; ${fmtDist(c.distance)}</span>`,
@@ -412,10 +701,25 @@
             <div class="card-name">${escHtml(c.name)}</div>
             ${c.address ? `<div class="card-address">${escHtml(c.address)}${c.city ? ', ' + escHtml(c.city) : ''}</div>` : ''}
             <div class="card-tags">${tags}</div>
-            <a class="card-link" href="${mapsUrl}" target="_blank" rel="noopener">
-              View on Google Maps &rarr;
-            </a>
+            <a class="card-link" href="${mapsUrl}" target="_blank" rel="noopener">View on Google Maps &rarr;</a>
             ${c.website ? ` &nbsp;<a class="card-link" href="${escHtml(c.website)}" target="_blank" rel="noopener">Website &rarr;</a>` : ''}
+            <div class="note-expand${hasNote ? ' open' : ''}" id="note-area-${id}">
+              <textarea
+                placeholder="Add a personal note..."
+                oninput="onNoteInput('${id}')"
+                onblur="onNoteBlur('${id}')">${escHtml(saved?.note || '')}</textarea>
+              <div class="note-hint">Auto-saved when you leave the field</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="action-btn fav-btn ${isFav ? 'active' : ''}"
+              data-id="${id}"
+              onclick="toggleFav('${id}')"
+              title="${isFav ? 'Remove from saved' : 'Save this place'}">${isFav ? '♥' : '♡'}</button>
+            <button class="action-btn note-btn ${hasNote ? 'has-note' : ''}"
+              data-id="${id}"
+              onclick="toggleNoteArea('${id}')"
+              title="Add a note">&#9998;</button>
           </div>
         </div>`;
     }).join('');
@@ -431,8 +735,7 @@
   }
 
   function setStatus(html) {
-    document.getElementById('results').innerHTML =
-      `<div class="status-msg">${html}</div>`;
+    document.getElementById('results').innerHTML = `<div class="status-msg">${html}</div>`;
   }
 
   function escHtml(str) {
@@ -442,6 +745,8 @@
   document.getElementById('locationInput').addEventListener('keydown', e => {
     if (e.key === 'Enter') doSearch();
   });
+
+  loadSaved();
 </script>
 </body>
 </html>
